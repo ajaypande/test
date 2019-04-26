@@ -32,6 +32,9 @@
         tryToggle(cx, cy + 1);
         tryToggle(cx, cy - 1);
         doGrid();
+        for (i = 0; i < 16; i++)
+          if (grid[i] == 0) return;
+        Alert("Bakaiti!!"); 
       }
       let grid = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
       let canvas = document.querySelector("canvas");
