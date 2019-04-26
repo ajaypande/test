@@ -4,6 +4,7 @@
   
   <body onmousedown="toggle(event)">
     <canvas width="500" height="500"></canvas>
+    <button onclick="reset()">Reset</button>
     <script>
       function dot(dotx, doty, radius, color) {
         context.clearRect(dotx - 8, doty - 8, 16, 16);
@@ -35,6 +36,10 @@
         for (i = 0; i < 16; i++)
           if (grid[i] == 0) return;
         alert("Bakaiti!!"); 
+      }
+      function reset() {
+        for (i=0; i <16; i++) grid[i] = 0;
+        doGrid();
       }
       let grid = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
       let canvas = document.querySelector("canvas");
