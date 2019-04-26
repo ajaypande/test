@@ -2,7 +2,7 @@
   <head>
   </head>
   
-  <body>
+  <body onmousedown="toggle(event)">
     <canvas width="500" height="500"></canvas>
     <script>
       function dot(dotx, doty, radius, color) {
@@ -11,14 +11,19 @@
         context.arc(dotx,doty, radius, 0, 2*Math.PI);
         context.fill();
       }
-      
-      let grid = [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1];
+      function doGrid() {
+        for (i = 0; i < 4; i++) 
+          for (j = 0; j <4; j++) 
+            if (grid[i*4+j] == 0) dot(100 + i*80, 100 + j*80, 2, "black")
+            else dot(100 + i*80, 100 + j*80, 6, "orange");
+      }
+      function toggle(e) {
+        alert(e.offsetX + " " + e.offsetY);
+      }
+      let grid = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
       let canvas = document.querySelector("canvas");
       let context = canvas.getContext("2d");
-      for (i = 0; i < 4; i++) 
-        for (j = 0; j <4; j++) 
-          if (grid[i*4+j] == 0) dot(100 + i*80, 100 + j*80, 2, "black")
-          else dot(100 + i*80, 100 + j*80, 6, "orange");
+      
     </script>
   </body>
 </html>
