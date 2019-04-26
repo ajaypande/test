@@ -5,10 +5,13 @@
   <body>
     <canvas width="500" height="300"></canvas>
     <script>
+      let grid = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
       let canvas = document.querySelector("canvas");
       let context = canvas.getContext("2d");
       context.fillStyle = "red";
-      context.fillRect(50, 50, 200, 200);
+      context.beginPath();
+      context.arc(200,150, 100, 0, 2*Math.PI);
+      context.fill();
     </script>
   </body>
 </html>
