@@ -35,7 +35,7 @@
         doGrid();
         for (i = 0; i < 16; i++)
           if (grid[i] == 0) return;
-        alert("Bakaiti!!"); 
+        setTimeout(function() {alert("Bakaiti!!"); }, 200); 
       }
       function reset() {
         for (i=0; i <16; i++) grid[i] = 0;
