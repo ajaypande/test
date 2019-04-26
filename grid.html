@@ -6,6 +6,7 @@
     <canvas width="500" height="500"></canvas>
     <script>
       function dot(dotx, doty, radius, color) {
+        context.clearRect(dotx - 8, doty - 8, 16, 16);
         context.fillStyle = color;
         context.beginPath();
         context.arc(dotx,doty, radius, 0, 2*Math.PI);
